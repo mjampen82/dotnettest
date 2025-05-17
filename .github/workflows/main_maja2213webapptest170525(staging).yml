@@ -40,7 +40,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'staging'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
@@ -54,6 +54,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'maja2213webapptest170525'
-          slot-name: 'Production'
+          slot-name: 'staging'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_193A1DFB74B741409CEA189937D37F33 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0E2C2D0985154D4CAEC2946956DCEA65 }}
